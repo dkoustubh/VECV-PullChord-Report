@@ -71,5 +71,31 @@ Server-side rendering is handled by **Thymeleaf**.
 - **Build Tool**: Maven
 - **Frontend**: HTML5, CSS3, JavaScript
 
+## 📥 Installation & Setup
+
+### 1. Database Setup
+The application connects to a SQL Server database. We have provided a script to set this up automatically.
+1. Create a database named `VECV_Scada_DB` in your SQL Server.
+2. Run the provided script **`database_setup.sql`** (located in the root folder) to create the required tables (`Z3_Pullchord_T2`, etc.) and dummy data.
+
+### 2. Configure Connection
+Open `src/main/resources/application.properties` and update your SQL Server credentials:
+```properties
+spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=VECV_Scada_DB;encrypt=true;trustServerCertificate=true;
+spring.datasource.username=sa
+spring.datasource.password=YOUR_PASSWORD  <-- Update this
+```
+
+### 3. Run the Application
+You can start the server using the included Maven wrapper:
+```bash
+./mvnw spring-boot:run
+```
+Once started, access the application at:
+- **Dashboard**: [http://localhost:8070/dashboard](http://localhost:8070/dashboard)
+- **Report Viewer**: [http://localhost:8070/report](http://localhost:8070/report)
+
+*For a detailed step-by-step guide, please refer to [SETUP.md](SETUP.md).*
+
 ## 👥 Credits
 Developed by **Koustubh Deodhar**.
