@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Report Viewer</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .custom-heading {
+            color: #2c3e50;
+            /* Custom dark blue color */
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+    <div class="container">
+        <h2 class="custom-heading">SCADA Report Viewer</h2>
+
+        <form method="get" action="/report" class="mb-3">
+            <div class="row mb-3">
+                <!-- Select Table Dropdown -->
+                <div class="col-md-6">
+                    <label for="selectedTable" class="form-label">Select Table:</label>
+                    <select id="selectedTable" name="selectedTable" class="form-select" onchange="this.form.submit()">
+                        <option value="Z3 Pullchord T2" th:selected="${selectedTable == 'Z3 Pullchord T2'}">Z3 Pullchord
+                            T2</option>
+                        <option value="Z5 Pullchord T" th:selected="${selectedTable == 'Z5 Pullchord T'}">Z5 Pullchord T
+                        </option>
+                        <option value="Z7 Pullchord T" th:selected="${selectedTable == 'Z7 Pullchord T'}">Z7 Pullchord T
+                        </option>
+                        <option value="Z9 Pullchord T" th:selected="${selectedTable == 'Z9 Pullchord T'}">Z9 Pullchord T
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Station Dropdown -->
+                <div class="col-md-6">
+                    <label for="station" class="form-label">Station:</label>
+                    <select id="station" name="station" class="form-select" onchange="this.form.submit()">
+                        <option value="">All Stations</option>
+                        <option th:each="st : ${stations}" th:value="${st}" th:text="${st}"
+                            th:selected="${station == st}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label for="fromDateTime" class="form-label">Start Date & Time:</label>
+                    <input type="datetime-local" id="fromDateTime" name="fromDateTime" class="form-control"
+                        th:value="${fromDateTime}" />
+                </div>
+
+                <div class="col-md-3">
+                    <label for="toDateTime" class="form-label">End Date & Time:</label>
+                    <input type="datetime-local" id="toDateTime" name="toDateTime" class="form-control"
+                        th:value="${toDateTime}" />
+                </div>
+
+                <div class="col-md-2">
+                    <label for="shiftName" class="form-label">Shift:</label>
+                    <select id="shiftName" name="shiftName" class="form-select">
+                        <option value="">All Shifts</option>
+                        <option value="A" th:selected="${shiftName == 'A'}">Shift A</option>
+                        <option value="B" th:selected="${shiftName == 'B'}">Shift B</option>
+                        <option value="C" th:selected="${shiftName == 'C'}">Shift C</option>
+                    </select>
+                </div>
+
+
+
+
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">Filter</button>
+                </div>
+
+                <div class="col-md-2">
+                    <a th:href="@{|/download?selectedTable=${selectedTable}&fromDateTime=${fromDateTime}&toDateTime=${toDateTime}&shiftName=${shiftName}&objectName=${objectName}&station=${station}|}"
+                        class="btn btn-success w-100">Download Excel</a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div th:switch="${selectedTable}">
+        <div th:case="'Z3 Pullchord T2'">
+            <h4>Z3 Pullchord T2</h4>
+            <!-- Table Display for Scanned Data -->
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Date Time</th>
+                        <th>Shift</th>
+                        <th>Line</th>
+                        <th>Zone</th>
+                        <th>Station</th>
+                        <th>Side</th>
+                        <th>Maintenance Call</th>
+                        <th>Material Call</th>
+                        <th>Production Call</th>
+                        <th>Pull Cord</th>
+                        <th>Quality Call</th>
+                        <th>Remark</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr th:each="record : ${records}">
+                        <td th:text="${record.srNo}">Sr No</td>
+                        <td th:text="${record.dateTime}">Date Time</td>
+                        <td th:text="${record.shift}">Shift</td>
+                        <td th:text="${record.line}">Line</td>
+                        <td th:text="${record.zone}">Zone</td>
+                        <td th:text="${record.station}">Station</td>
+                        <td th:text="${record.side}">Side</td>
+                        <td th:text="${record.maintenanceCall}">Maintenance Call</td>
+                        <td th:text="${record.materialCall}">Material Call</td>
+                        <td th:text="${record.productionCall}">Production Call</td>
+                        <td th:text="${record.pullCord}">Pull Cord</td>
+                        <td th:text="${record.qualityCall}">Quality Call</td>
+                        <td th:text="${record.remark}">Remark</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+        <div th:switch="${selectedTable}">
+            <div th:case="'Z5 Pullchord T'">
+                <h4>Z5 Pullchord T</h4>
+                <!-- Table Display for Scanned Data -->
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Date Time</th>
+                            <th>Shift</th>
+                            <th>Line</th>
+                            <th>Zone</th>
+                            <th>Station</th>
+                            <th>Side</th>
+                            <th>Maintenance Call</th>
+                            <th>Material Call</th>
+                            <th>Production Call</th>
+                            <th>Pull Cord</th>
+                            <th>Quality Call</th>
+                            <th>Remark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="record : ${records}">
+                            <td th:text="${record.srNo}">Sr No</td>
+                            <td th:text="${record.dateTime}">Date Time</td>
+                            <td th:text="${record.shift}">Shift</td>
+                            <td th:text="${record.line}">Line</td>
+                            <td th:text="${record.zone}">Zone</td>
+                            <td th:text="${record.station}">Station</td>
+                            <td th:text="${record.side}">Side</td>
+                            <td th:text="${record.maintenanceCall}">Maintenance Call</td>
+                            <td th:text="${record.materialCall}">Material Call</td>
+                            <td th:text="${record.productionCall}">Production Call</td>
+                            <td th:text="${record.pullCord}">Pull Cord</td>
+                            <td th:text="${record.qualityCall}">Quality Call</td>
+                            <td th:text="${record.remark}">Remark</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+            <div th:switch="${selectedTable}">
+                <div th:case="'Z7 Pullchord T'">
+                    <h4>Z7 Pullchord T</h4>
+                    <!-- Table Display for Scanned Data -->
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Date Time</th>
+                                <th>Shift</th>
+                                <th>Line</th>
+                                <th>Zone</th>
+                                <th>Station</th>
+                                <th>Side</th>
+                                <th>Maintenance Call</th>
+                                <th>Material Call</th>
+                                <th>Production Call</th>
+                                <th>Pull Cord</th>
+                                <th>Quality Call</th>
+                                <th>Remark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="record : ${records}">
+                                <td th:text="${record.srNo}">Sr No</td>
+                                <td th:text="${record.dateTime}">Date Time</td>
+                                <td th:text="${record.shift}">Shift</td>
+                                <td th:text="${record.line}">Line</td>
+                                <td th:text="${record.zone}">Zone</td>
+                                <td th:text="${record.station}">Station</td>
+                                <td th:text="${record.side}">Side</td>
+                                <td th:text="${record.maintenanceCall}">Maintenance Call</td>
+                                <td th:text="${record.materialCall}">Material Call</td>
+                                <td th:text="${record.productionCall}">Production Call</td>
+                                <td th:text="${record.pullCord}">Pull Cord</td>
+                                <td th:text="${record.qualityCall}">Quality Call</td>
+                                <td th:text="${record.remark}">Remark</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div th:switch="${selectedTable}">
+                    <div th:case="'Z9 Pullchord T'">
+                        <h4>Z9 Pullchord T</h4>
+                        <!-- Updated Table Display -->
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Sr No</th>
+                                    <th>Date Time</th>
+                                    <th>Shift</th>
+                                    <th>Line</th>
+                                    <th>Zone</th>
+                                    <th>Station</th>
+                                    <th>Side</th>
+
+                                    <th>Maintenance Call</th>
+                                    <th>Material Call</th>
+                                    <th>Production Call</th>
+                                    <th>Pull Cord</th>
+                                    <th>Quality Call</th>
+                                    <th>Remark</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="record : ${records}">
+                                    <td th:text="${record.srNo}">Sr No</td>
+                                    <td th:text="${record.dateTime}">Date Time</td>
+                                    <td th:text="${record.shift}">Shift</td>
+                                    <td th:text="${record.line}">Line</td>
+                                    <td th:text="${record.zone}">Zone</td>
+                                    <td th:text="${record.station}">Station</td>
+                                    <td th:text="${record.side}">Side</td>
+
+                                    <td th:text="${record.maintenanceCall}">Maintenance Call</td>
+                                    <td th:text="${record.materialCall}">Material Call</td>
+                                    <td th:text="${record.productionCall}">Production Call</td>
+                                    <td th:text="${record.pullCord}">Pull Cord</td>
+                                    <td th:text="${record.qualityCall}">Quality Call</td>
+                                    <td th:text="${record.remark}">Remark</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Add other table cases here -->
+
+            </div>
+
+            <!-- Pagination Controls with preserved filter parameters -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+
+                    <!-- Previous -->
+                    <li class="page-item" th:classappend="${currentPage == null or currentPage == 0} ? 'disabled'">
+                        <a class="page-link" th:href="@{/report(
+                   selectedTable=${selectedTable}, 
+                   fromDateTime=${fromDateTime}, 
+                   toDateTime=${toDateTime}, 
+                   shiftName=${shiftName},
+                   objectName=${objectName},
+                   page=${currentPage != null and currentPage > 0 ? currentPage - 1 : 0}
+               )}">
+                            Previous
+                        </a>
+                    </li>
+
+                    <!-- Pages -->
+                    <li class="page-item"
+                        th:each="i : ${#numbers.sequence(0, totalPages != null and totalPages > 0 ? totalPages - 1 : 0)}"
+                        th:classappend="${i == currentPage} ? 'active'">
+                        <a class="page-link" th:href="@{/report(
+                   selectedTable=${selectedTable}, 
+                   fromDateTime=${fromDateTime}, 
+                   toDateTime=${toDateTime}, 
+                   shiftName=${shiftName},
+                   objectName=${objectName},
+                   page=${i}
+               )}" th:text="${i + 1}">1</a>
+                    </li>
+
+                    <!-- Next -->
+                    <li class="page-item"
+                        th:classappend="${currentPage == null or currentPage + 1 >= totalPages} ? 'disabled'">
+                        <a class="page-link" th:href="@{/report(
+                   selectedTable=${selectedTable}, 
+                   fromDateTime=${fromDateTime}, 
+                   toDateTime=${toDateTime}, 
+                   shiftName=${shiftName},
+                   objectName=${objectName},
+                   page=${currentPage != null ? currentPage + 1 : 1}
+               )}">
+                            Next
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+</body>
+
+</html>

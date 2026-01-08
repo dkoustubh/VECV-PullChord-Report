@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,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">
+
+    <title>VECV – Industrial Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Chart.js + Zoom Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        /* ======================================================
+   THEME VARIABLES
+======================================================*/
+        :root {
+            --bg: #0b0f19;
+            --card: #141a28;
+            --card-shadow: rgba(0, 0, 0, 0.45);
+            --text: #ffffff;
+            --accent: #01c1d6;
+            --muted: #9aa3b2;
+            --border: #ffffff14;
+            --panel: #0f1622;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f7fa;
+            --card: #ffffff;
+            --card-shadow: rgba(0, 0, 0, 0.12);
+            --text: #000000;
+            --accent: #ff9700;
+            --muted: #666;
+            --border: #00000014;
+            --panel: #ffffff;
+        }
+
+        /* ======================================================
+   GLOBAL STYLES
+======================================================*/
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* ======================================================
+   NAVBAR
+======================================================*/
+        /* NAVBAR */
+        .navbar {
+            height: 60px;
+            background: #0a1a3a;
+            /* Dark Blue */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 18px;
+
+            /* White underline */
+            border-bottom: 4px solid #ffd000;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+
+        }
+
+        .live-dot {
+            width: 12px;
+            height: 12px;
+            background: red;
+            border-radius: 50%;
+            box-shadow: 0 0 8px red;
+        }
+
+        /* Toggle */
+        .theme-toggle {
+            width: 55px;
+            height: 26px;
+            border-radius: 20px;
+            background: var(--muted);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .toggle-circle {
+            width: 24px;
+            height: 24px;
+            background: var(--card);
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all .3s ease;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+        }
+
+        [data-theme="light"] .toggle-circle {
+            left: 30px;
+        }
+
+        /* ======================================================
+   SIDEBAR
+======================================================*/
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 60px;
+            height: calc(100vh - 60px);
+            background: var(--card);
+            padding-top: 10px;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 10px var(--card-shadow);
+        }
+
+        .side-btn {
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 22px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .side-btn:hover::after {
+            content: attr(data-tip);
+            position: absolute;
+            left: 75px;
+            padding: 6px 10px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            color: var(--muted);
+        }
+
+        /* ======================================================
+   MAIN AREA
+======================================================*/
+        .main {
+            margin-left: 85px;
+            padding: 20px;
+        }
+
+        /* ======================================================
+   KPI CARDS (with stronger Apple-like shadow)
+======================================================*/
+        .kpi-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .kpi {
+            flex: 1;
+            background: var(--card);
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            text-align: center;
+            box-shadow: 0 4px 18px var(--card-shadow);
+        }
+
+        /* ======================================================
+   CHART CARDS (Apple Depth Shadow)
+======================================================*/
+        .chart-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .chart-card {
+            flex: 1;
+            padding: 10px;
+            background: var(--card);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            box-shadow: 0 4px 18px var(--card-shadow);
+            transition: 0.2s;
+        }
+
+        .chart-card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ======================================================
+   REPORT BOX
+======================================================*/
+        .report-box {
+            margin-top: 25px;
+            padding: 15px;
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 16px var(--card-shadow);
+        }
+
+        /* ======================================================
+   HEATMAP
+======================================================*/
+        .heatmap-item {
+            width: 90px;
+            height: 80px;
+            border-radius: 10px;
+            padding-top: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 3px 10px var(--card-shadow);
+        }
+
+        /* ======================================================
+   TABS
+======================================================*/
+        .tab-btn {
+            padding: 9px 14px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .tab-btn.active {
+            background: var(--accent);
+            color: #000;
+        }
+
+        /* ======================================================
+   EXCEL BUTTON
+======================================================*/
+        .excel-btn {
+            padding: 8px 12px;
+            background: var(--accent);
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* ======================================================
+   START OF APPLE FINDER TABLE STYLE (will continue in PART 2)
+======================================================*/
+        /* ======================================================
+   APPLE FINDER TABLE UI (clean, soft, minimal)
+======================================================*/
+        .table-section {
+            margin-top: 25px;
+            background: var(--card);
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 18px var(--card-shadow);
+        }
+
+        /* Controls */
+        .table-controls {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .controls-right {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        /* Apple Inputs */
+        select,
+        input[type="text"],
+        input[type="date"],
+        input[type="datetime-local"] {
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--panel);
+            color: var(--text);
+            font-size: 13px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Advanced Filters */
+        .adv-box {
+            margin-top: 12px;
+            display: none;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .adv-box.show {
+            display: flex;
+        }
+
+        /* Table wrapper */
+        .table-wrap {
+            margin-top: 15px;
+            overflow: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 10px var(--card-shadow);
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        thead th {
+            text-align: left;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(4px);
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--muted);
+            border-bottom: 1px solid var(--border);
+        }
+
+        tbody tr {
+            transition: 0.15s;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        tbody td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 14px;
+        }
+
+        .page-btn {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .page-btn:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .page-btn.active {
+            background: var(--accent);
+            border: none;
+            color: #000;
+        }
+
+        /* Small text */
+        .small {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* Responsive */
+        @media (max-width:900px) {
+            .chart-row {
+                flex-direction: column;
+            }
+
+            .table-controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .controls-right {
+                width: 100%;
+                justify-content: flex-start;
+            }
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<!-- DEFAULT DAY MODE -->
+
+<body data-theme="light">
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div style="display:flex; align-items:center; gap:12px;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAC7gAAAfQCAMAAABlzOIIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAFKUExURUdwTIKCgn9/f39/f4CAgP8AAH9/f39/f/8AAP8AAICAgICAgICAgP8AAIaGhoGBgf8AAICAgIGBgcY0NH9/f/8AAH9/f/8AAH9/f4CAgICAgP8AAICAgICAgH9/f46OjoCAgH9/f4CAgP8AAIODg4GBgf8AAP8AAICAgICAgH9/f/8AAH9/f39/f4GBgX9/f/8AAP8AAICAgH9/f39/f/8AAIKCgv8AAICAgH9/f/8AAP8AAP8AAP8AAH9/f/8AAP8AAP8AAH9/f4CAgP8AAICAgP8AAP8AAP8AAH9/f4mJif8AAP8AAP8AAP8AAICAgP8AAP8AAP8AAP8AAP8AAP8AAICAgP8AAP8AAP8AAICAgP8AAP8AAP8AAH9/f/8AAP8AAP8AAP8AAP8AAP8AAP8AAP8AAH9/f/8AAP8AAH9/f/8AAICAgP8AAL92wVEAAABsdFJOUwAzqsLdu5zuiBHmd7vMECF3mVUB2JmWZpFL993V2GwH0mbPVQxN+6r84k736okcWwVEJfNF/hboOsvyMtjtoys5CMa1j0DiJKGDBSDAFbcsP20Z0rCBYcp8Wq+mCkx9lFFfDsYMcoRyRxy/Y2EKprcAACAASURBVHja7MEBAQAAAICQ/q/uCAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA2YMDAQAAAAAg/9dGUFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVh7/5e0u7iOIA/N0JeBIJ86cLLQC+6sQsRUklBNCiHP1FpUtmSIvz/b5/a1tqWltvT9nzP19frbmN96eRbeO/08RwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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XWv8zbTV2D58OdjwlVMAAMiu4l0CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfmcPDgQAAAAAgPxfG0FVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVhT04EAAAAAAA8n9tBFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVWV9uCQAAAAAEDQ/9fOsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAIIPSVOdLNKNAAAAABJRU5ErkJggg=="
+                style="height:60px;width:auto;border-radius:6px;">
+            <h2 style="margin:0; color:#ffffff;">VECV Dashboard</h2>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:15px;">
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <div class="toggle-circle" id="themeIcon">☀️</div>
+            </div>
+            <div class="live-dot"></div>
+            <span style="color:#ffffff;">LIVE</span>
+            <span id="clock" style="color:#ffffff;">--:--:--</span>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <button class="side-btn" data-tip="Dashboard">🏠</button>
+        <button class="side-btn" data-tip="Heatmap" onclick="scrollHeatmap()">🗺️</button>
+        <button class="side-btn" data-tip="Heatmap" onclick="scrollHeatmap()">📊</button>
+        <button class="side-btn" data-tip="Download Table CSV" onclick="exportCSV()">⬇️</button>
+        <button class="side-btn" data-tip="Download Dashboard PDF" onclick="downloadPDF()">📄</button>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div class="main">
+
+        <!-- KPI CARDS -->
+        <div class="kpi-row">
+            <div class="kpi">
+                <h3>Total Downtime</h3>
+                <h2 id="k1">N/A</h2>
+            </div>
+            <div class="kpi">
+                <h3>Total Events</h3>
+                <h2 id="k2">324779</h2>
+            </div>
+            <div class="kpi">
+                <h3>Selected Table</h3>
+                <h2 id="k3" style="font-size:16px;">Z3 Pullchord T2</h2>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="chart-row">
+            <div class="chart-card" onclick="openDetail(1)"><canvas id="c1"></canvas></div>
+            <div class="chart-card" onclick="openDetail(2)"><canvas id="c2"></canvas></div>
+            <div class="chart-card" onclick="openDetail(3)"><canvas id="c3"></canvas></div>
+        </div>
+
+                        <!-- ====================== APPLE FINDER TABLE ====================== -->
+        <div class="table-section" id="tableSection">
+            <h3 style="margin:0 0 20px 0; font-size:20px; color:var(--text);">SCADA Report Viewer</h3>
+
+            <!-- FILTER FORM -->
+            <form method="get" action="/dashboard" style="background:rgba(255,255,255,0.03); padding:20px; border-radius:12px; border:1px solid var(--border); margin-bottom:20px;">
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:15px; margin-bottom:15px;">
+                    <!-- Select Table -->
+                    <div>
+                        <label class="small" style="display:block; margin-bottom:5px; color:var(--muted);">Select Table:</label>
+                        <select name="selectedTable" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-size:14px;">
+                            <option value="Z3 Pullchord T2" selected="selected">Z3 Pullchord T2</option>
+                            <option value="Z5 Pullchord T">Z5 Pullchord T</option>
+                            <option value="Z7 Pullchord T">Z7 Pullchord T</option>
+                            <option value="Z9 Pullchord T">Z9 Pullchord T</option>
+                        </select>
+                    </div>
+
+                    <!-- Station -->
+                    <div>
+                        <label class="small" style="display:block; margin-bottom:5px; color:var(--muted);">Station:</label>
+                        <select name="station" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-size:14px;">
+                            <option value="">All Stations</option>
+                        </select>
+                    </div>
+
+                    <!-- Shift -->
+                    <div>
+                        <label class="small" style="display:block; margin-bottom:5px; color:var(--muted);">Shift:</label>
+                        <select name="shift" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-size:14px;">
+                            <option value="">All Shifts</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+
+                    <!-- Rows Per Page -->
+                    <div>
+                        <label class="small" style="display:block; margin-bottom:5px; color:var(--muted);">Rows Per Page:</label>
+                        <select name="size" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-size:14px;">
+                            <option value="10" selected="selected">10</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="1000">All</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Date Range Row -->
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:15px; margin-bottom:15px;">
+                    <!-- Start Date & Time -->
+                    <div>
+                        <label class="small" style="display:block; margin-bottom:5px; color:var(--muted);">Start Date & Time:</label>
+                        <input type="datetime-local" name="fromDateTime" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-size:14px;">
+                    </div>
+
+                    <!-- End Date & Time -->
+                    <div>
+                        <label class="small" style="display:block; margin-bottom:5px; color:var(--muted);">End Date & Time:</label>
+                        <input type="datetime-local" name="toDateTime" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-size:14px;">
+                    </div>
+                </div>
+
+                <!-- Hidden page reset -->
+                <input type="hidden" name="page" value="0"/>
+
+                <!-- Action Buttons -->
+                <div style="display:flex; gap:10px; justify-content:flex-end;">
+                    <button type="submit" style="padding:10px 24px; background:#007bff; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; box-shadow:0 2px 6px rgba(0,123,255,0.3); transition:0.2s;">
+                        🔍 Filter
+                    </button>
+                    <button type="button" onclick="window.location.href='/download?selectedTable=' + document.querySelector('[name=selectedTable]').value" 
+                            style="padding:10px 24px; background:#28a745; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; box-shadow:0 2px 6px rgba(40,167,69,0.3); transition:0.2s;">
+                        📥 Download Excel
+                    </button>
+                </div>
+            </form>
+
+            <!-- TABLE -->
+            <div class="table-wrap">
+                <table id="downtimeTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('sr')">Sr No ▲▼</th>
+                            <th onclick="sortTable('datetime')">Date Time ▲▼</th>
+                            <th onclick="sortTable('shift')">Shift ▲▼</th>
+                            <th onclick="sortTable('line')">Line ▲▼</th>
+                            <th onclick="sortTable('zone')">Zone ▲▼</th>
+                            <th onclick="sortTable('station')">Station ▲▼</th>
+                            <th onclick="sortTable('side')">Side ▲▼</th>
+                            <th onclick="sortTable('maintenanceCall')">Maintenance Call ▲▼</th>
+                            <th onclick="sortTable('materialCall')">Material Call ▲▼</th>
+                            <th onclick="sortTable('productionCall')">Production Call ▲▼</th>
+                            <th onclick="sortTable('pullCord')">Pull Cord ▲▼</th>
+                            <th onclick="sortTable('qualityCall')">Quality Call ▲▼</th>
+                            <th onclick="sortTable('remark')">Remark ▲▼</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1359</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezanine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Maintenance Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1363</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezanine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Maintenance Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1364</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezanine</td>
+                            <td>MZ_02</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Material Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1365</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezanine</td>
+                            <td>MZ_02</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Material Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1405</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Production Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1406</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Production Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1407</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_03</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>Quality Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1408</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_03</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Quality Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1409</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1410</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1411</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Material Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1412</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Material Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1413</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_04</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Production Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1414</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_04</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Production Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1415</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_05</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1416</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>TITAN</td>
+                            <td>Mezannine</td>
+                            <td>MZ_05</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1419</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1420</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1421</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1422</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1430</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>1431</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Production Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1432</td>
+                            <td>2025-11-17 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Production Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1553</td>
+                            <td>2025-08-22 13:40:34.617</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1554</td>
+                            <td>2025-08-22 19:35:53.687</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>1555</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1556</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>1557</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1558</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>1559</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1560</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>1561</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1562</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>1563</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>1564</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>B</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>2564</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>C</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>2565</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>2566</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>3556</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Production Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4035</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_01</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4039</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_02</td>
+                            <td>RH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Material Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4070</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_03</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>4091</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_04</td>
+                            <td>RH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Quality Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4093</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_09</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Material Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4094</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_05</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4095</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_07</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call Without Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4096</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_08</td>
+                            <td>RH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Quality Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4097</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_06</td>
+                            <td>RH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Maintenance Call With Pullcord</td>
+                        </tr>
+                        <tr>
+                            <td>4098</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_08</td>
+                            <td>RH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                        <tr>
+                            <td>4099</td>
+                            <td>2025-11-27 14:51:37.34</td>
+                            <td>A</td>
+                            <td>SCV</td>
+                            <td>Mezannine</td>
+                            <td>MZ_05</td>
+                            <td>LH</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>Pullcord Without Call</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PAGINATION -->
+            <div class="pagination" id="tablePagination" style="margin-top:20px; display:flex; gap:8px; align-items:center; justify-content:center;">
+                <!-- Previous Button -->
+                
+                
+                <!-- Current Page Indicator -->
+                <span class="page-btn active">1</span>
+                
+                <!-- Next Button -->
+                
+                
+                <!-- Page Info -->
+                <span class="small" style="margin-left:15px; color:var(--muted);">
+                    Page <span>1</span> 
+                    of <span>1</span>
+                    (<span>0</span> total records | 
+                    <span>10</span> per page)
+                </span>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <div class="footer">
+            ATS Conveyors India Pvt Ltd | 2025
+        </div>
+
+        <script>
+            /* ======================================================
+               REAL-TIME CLOCK (DD-MM-YYYY HH:MM:SS)
+            ======================================================*/
+            (function startClock() {
+                const el = document.getElementById("clock");
+                function tick() {
+                    const now = new Date();
+                    const dd = String(now.getDate()).padStart(2, '0');
+                    const mm = String(now.getMonth() + 1).padStart(2, '0');
+                    const yyyy = now.getFullYear();
+                    const hh = String(now.getHours()).padStart(2, '0');
+                    const min = String(now.getMinutes()).padStart(2, '0');
+                    const ss = String(now.getSeconds()).padStart(2, '0');
+                    el.textContent = `${dd}-${mm}-${yyyy} ${hh}:${min}:${ss}`;
+                }
+                tick();
+                setInterval(tick, 1000);
+            })();
+
+            /* ======================================================
+               THEME TOGGLE
+            ======================================================*/
+            function toggleTheme() {
+                const b = document.body;
+                const isLight = b.getAttribute("data-theme") === "light";
+                b.setAttribute("data-theme", isLight ? "dark" : "light");
+                document.getElementById("themeIcon").innerText = isLight ? "🌙" : "☀️";
+            }
+
+            /* ======================================================
+               REAL DATA FROM BACKEND (SERVER-SIDE RENDERED)
+            ======================================================*/
+            // Data is rendered by Thymeleaf on the server
+            let sample = [];
+            let currentZone = "Z3";
+
+            function formatDate(d) {
+                return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')} `
+                    + `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}:${String(d.getSeconds()).padStart(2, '0')}`;
+            }
+            function secToHMS(sec) {
+                const h = String(Math.floor(sec / 3600)).padStart(2, '0');
+                const m = String(Math.floor((sec % 3600) / 60)).padStart(2, '0');
+                const s = String(sec % 60).padStart(2, '0');
+                return `${h}:${m}:${s}`;
+            }
+
+            /* ======================================================
+               UPDATE KPI CARDS
+            ======================================================*/
+            function updateKPIs(data) {
+                let totalMin = data.reduce((sum, row) => {
+                    const parts = row.downtime.split(":").map(Number);
+                    return sum + Math.floor((parts[0] * 3600 + parts[1] * 60 + parts[2]) / 60);
+                }, 0);
+
+                document.getElementById("k1").innerText = `${totalMin} min`;
+                document.getElementById("k2").innerText = data.length;
+                document.getElementById("k3").innerText = data.length ? (totalMin / data.length).toFixed(1) + " min" : "0 min";
+            }
+
+            /* ======================================================
+               CHARTS (3)
+            ======================================================*/
+            const chart1 = new Chart(document.getElementById("c1"), {
+                type: "line",
+                data: {
+                    labels: ["T1", "T2", "T3", "T4", "T5"],
+                    datasets: [{ label: "MTBF", data: [14, 20, 11, 19, 15], borderColor: "#01c1d6" }]
+                },
+                options: { plugins: { zoom: { zoom: { wheel: { enabled: true }, mode: "x" } } } }
+            });
+
+            const chart2 = new Chart(document.getElementById("c2"), {
+                type: "bar",
+                data: {
+                    labels: ["Zone A", "Zone B", "Zone C"],
+                    datasets: [{ label: "Downtime", data: [33, 22, 18], backgroundColor: "#01c1d6" }]
+                }
+            });
+
+            const chart3 = new Chart(document.getElementById("c3"), {
+                type: "doughnut",
+                data: {
+                    labels: ["Electrical", "Mechanical", "Material"],
+                    datasets: [{ data: [8, 5, 4], backgroundColor: ["#00e0ff", "#ffcd38", "#1e90ff"] }]
+                }
+            });
+
+            /* ======================================================
+               OPEN CHART IN NEW TAB (always in light mode)
+            ======================================================*/
+            function openDetail(id) {
+                const data = {
+                    1: [10, 20, 15, 30, 12, 18],
+                    2: [30, 22, 40, 15, 28, 10],
+                    3: [5, 7, 8, 3, 6, 4]
+                }[id];
+
+                const labels = data.map((_, i) => "P" + (i + 1));
+
+                const win = window.open("", "_blank");
+                win.document.write(`
+        <html>
+        <head>
+            <title>Detailed Chart</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"><\/script>
+            <style>
+                body { background:#ffffff; color:#000; font-family:Arial; margin:20px; }
+                h2 { margin-bottom:20px; }
+            </style>
+        </head>
+        <body>
+            <h2>Detailed Chart ${id}</h2>
+            <canvas id="det" height="400"></canvas>
+
+            <script>
+                new Chart(document.getElementById("det"), {
+                    type: "line",
+                    data: {
+                        labels: ${JSON.stringify(labels)},
+                        datasets:[{
+                            label:"Detail",
+                            data:${JSON.stringify(data)},
+                            borderColor:"#1e90ff"
+                        }]
+                    }
+                });
+            <\/script>
+        </body>
+        </html>
+    `);
+            }
+
+            /* ======================================================
+               HEATMAP
+            ======================================================*/
+            function loadHeatmap() {
+                const cont = document.getElementById("heatmap");
+                cont.innerHTML = "";
+                const zones = ["A1", "B2", "C1", "D3", "E6", "G1"];
+
+                zones.forEach(z => {
+                    let score = Math.floor(Math.random() * 45) + 60;
+                    let color = score > 85 ? "#4eea6c" : score > 72 ? "#ffe066" : "#ff7676";
+
+                    let div = document.createElement("div");
+                    div.className = "heatmap-item";
+                    div.style.background = color;
+                    div.style.padding = "12px";
+                    div.style.fontSize = "14px";
+                    div.innerHTML = `${z}<br>${score}%`;
+                    cont.appendChild(div);
+                });
+            }
+            loadHeatmap();
+
+            /* ======================================================
+               TABLE LOGIC (Filtering, Sorting, Pagination)
+            ======================================================*/
+            let filtered = sample.slice();
+            let sortCol = null;
+            let sortDir = 1;
+            let currentPage = 1;
+            let rowsPerPage = 10;
+
+            /* Populate station dropdown */
+            (function populateStations() {
+                const sel = document.getElementById("filterStation");
+                [...new Set(sample.map(r => r.station))].sort().forEach(stn => {
+                    const o = document.createElement("option");
+                    o.value = stn; o.textContent = stn;
+                    sel.appendChild(o);
+                });
+            })();
+
+            /* Toggle advanced filters */
+            function toggleAdvancedFilters() {
+                document.getElementById("advBox").classList.toggle("show");
+            }
+
+            /* Global Search */
+            function onSearch() {
+                applyFilters({ search: document.getElementById("globalSearch").value.toLowerCase() });
+            }
+
+            /* Rows per page change */
+            function onRowsPerPageChange() {
+                const value = document.getElementById("rowsPerPage").value;
+                rowsPerPage = (value === "all") ? filtered.length : parseInt(value);
+                currentPage = 1;
+                renderTable();
+            }
+
+            /* Apply all filters */
+            function applyFilters(opts = {}) {
+                const tableVal = opts.table || document.getElementById("filterTable").value;
+                
+                // Note: Filters are for demo purposes only
+                // Real data is shown in the Pull Chord Reports section (click 📊 button)
+                const stationVal = document.getElementById("filterStation").value;
+                const shiftVal = document.getElementById("filterShift").value;
+
+                const lineVal = document.getElementById("filterLine").value;
+                const zoneVal = document.getElementById("filterZone").value;
+                const typeVal = document.getElementById("filterType").value;
+                const sideVal = document.getElementById("filterSide").value;
+                const remarkVal = document.getElementById("filterRemark").value;
+
+                const fromVal = document.getElementById("filterFrom").value;
+                const toVal = document.getElementById("filterTo").value;
+
+                const searchVal = opts.search || document.getElementById("globalSearch").value.toLowerCase();
+
+                /* Table → Zone mapping */
+                const map = {
+                    "Z4 - Mezzanine": "Mezzanine",
+                    "Z5 - Prep Line": "Prep Line",
+                    "Z7 - Underbody": "Underbody",
+                    "Z7 - Final Assembly": "Final Assembly"
+                };
+
+                filtered = sample.filter(row => {
+                    if (map[tableVal] && row.zone !== map[tableVal]) return false;
+                    if (stationVal !== "All Stations" && row.station !== stationVal) return false;
+                    if (shiftVal !== "All" && row.shift !== shiftVal) return false;
+                    if (lineVal !== "All" && row.line !== lineVal) return false;
+                    if (zoneVal !== "All" && row.zone !== zoneVal) return false;
+                    if (typeVal !== "All" && row.type !== typeVal) return false;
+                    if (sideVal !== "All" && row.side !== sideVal) return false;
+                    if (remarkVal !== "All" && row.remark !== remarkVal) return false;
+
+                    if (fromVal || toVal) {
+                        const st = new Date(row.start_time);
+                        const en = new Date(row.end_time);
+
+                        if (fromVal && new Date(fromVal) > en) return false;
+                        if (toVal && new Date(toVal) < st) return false;
+                    }
+
+                    if (searchVal) {
+                        const s = searchVal;
+                        if (!(
+                            row.station.toLowerCase().includes(s) ||
+                            row.remark.toLowerCase().includes(s) ||
+                            row.zone.toLowerCase().includes(s) ||
+                            row.type.toLowerCase().includes(s) ||
+                            row.line.toLowerCase().includes(s)
+                        )) return false;
+                    }
+
+                    return true;
+                });
+
+                updateKPIs(filtered);
+                renderTable();
+            }
+
+            /* Reset filters */
+            function resetFilters() {
+                document.getElementById("filterTable").value = "Z4 - Mezzanine";
+                document.getElementById("filterStation").value = "All Stations";
+                document.getElementById("filterShift").value = "All";
+                document.getElementById("filterLine").value = "All";
+                document.getElementById("filterZone").value = "All";
+                document.getElementById("filterType").value = "All";
+                document.getElementById("filterSide").value = "All";
+                document.getElementById("filterRemark").value = "All";
+                document.getElementById("filterFrom").value = "";
+                document.getElementById("filterTo").value = "";
+                document.getElementById("globalSearch").value = "";
+
+                filtered = sample.slice();
+                updateKPIs(filtered);
+                renderTable();
+            }
+
+            /* Sort table */
+            function sortTable(col) {
+                if (sortCol === col) sortDir *= -1;
+                else { sortCol = col; sortDir = 1; }
+
+                filtered.sort((a, b) => {
+                    let x = a[col], y = b[col];
+
+                    if (col.includes("time") || col === "datetime")
+                        return sortDir * (new Date(a[col]) - new Date(b[col]));
+
+                    if (col.includes("downtime")) {
+                        const sx = a[col].split(":").reduce((acc, v, i) => acc + v * Math.pow(60, 2 - i), 0);
+                        const sy = b[col].split(":").reduce((acc, v, i) => acc + v * Math.pow(60, 2 - i), 0);
+                        return sortDir * (sx - sy);
+                    }
+
+                    if (x < y) return -1 * sortDir;
+                    if (x > y) return 1 * sortDir;
+                    return 0;
+                });
+
+                renderTable();
+            }
+
+            /* Render table */
+            function renderTable() {
+                const tbody = document.querySelector("#downtimeTable tbody");
+                tbody.innerHTML = "";
+
+                const perPage = rowsPerPage;
+                const total = filtered.length;
+                const totalPages = Math.max(1, Math.ceil(total / perPage));
+                if (currentPage > totalPages) currentPage = totalPages;
+
+                const start = (currentPage - 1) * perPage;
+                const rows = filtered.slice(start, start + perPage);
+
+                rows.forEach(r => {
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `
+            <td>${r.sr || ''}</td>
+            <td>${r.datetime || ''}</td>
+            <td>${r.shift || ''}</td>
+            <td>${r.line || ''}</td>
+            <td>${r.zone || ''}</td>
+            <td>${r.station || ''}</td>
+            <td>${r.side || ''}</td>
+            <td>${r.maintenanceCall || 0}</td>
+            <td>${r.materialCall || 0}</td>
+            <td>${r.productionCall || 0}</td>
+            <td>${r.pullCord || 0}</td>
+            <td>${r.qualityCall || 0}</td>
+            <td>${r.remark || ''}</td>
+        `;
+                    tbody.appendChild(tr);
+                });
+
+                renderPagination(totalPages);
+            }
+
+            /* Pagination */
+            function renderPagination(totalPages) {
+                const container = document.getElementById("tablePagination");
+                container.innerHTML = "";
+
+                if (rowsPerPage >= filtered.length) return;
+
+                function makeBtn(label, page, isActive = false) {
+                    const b = document.createElement("button");
+                    b.className = "page-btn" + (isActive ? " active" : "");
+                    b.textContent = label;
+                    b.onclick = () => { currentPage = page; renderTable(); };
+                    return b;
+                }
+
+                if (currentPage > 1) container.appendChild(makeBtn("Prev", currentPage - 1));
+
+                for (let p = 1; p <= totalPages; p++) {
+                    container.appendChild(makeBtn(p, p, p === currentPage));
+                }
+
+                if (currentPage < totalPages) container.appendChild(makeBtn("Next", currentPage + 1));
+            }
+
+            /* ======================================================
+               EXPORT CSV
+            ======================================================*/
+            function exportCSV() {
+                const header = ["SR", "DATETIME", "SHIFT", "LINE", "ZONE", "SIDE", "REMARK", "STATION", "TYPE", "START", "END", "DT", "TOTAL_DT"];
+                const rows = filtered.map(r => [
+                    r.sr, r.datetime, r.shift, r.line, r.zone, r.side, r.remark, r.station, r.type, r.start_time, r.end_time, r.downtime, r.total_downtime
+                ]);
+
+                const csv = [header, ...rows].map(r => r.join(",")).join("\n");
+                const blob = new Blob([csv], { type: "text/csv" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "downtime_table.csv";
+                a.click();
+            }
+
+            /* ======================================================
+               PDF EXPORT (FULL PAGE)
+            ======================================================*/
+            async function downloadPDF() {
+                const btn = document.querySelector('button[onclick="downloadPDF()"]');
+                const originalText = btn ? btn.innerText : "📄";
+
+                try {
+                    if (!window.jspdf) {
+                        throw new Error("jsPDF library not loaded. Please check your internet connection.");
+                    }
+
+                    if (btn) btn.innerText = "⏳"; // Loading indicator
+
+                    const { jsPDF } = window.jspdf;
+                    const canvas = await html2canvas(document.body, {
+                        scale: 2,
+                        useCORS: true,
+                        logging: true
+                    });
+
+                    const img = canvas.toDataURL("image/png");
+                    const pdf = new jsPDF("p", "mm", "a4");
+                    const w = pdf.internal.pageSize.getWidth();
+                    const h = (canvas.height * w) / canvas.width;
+                    pdf.addImage(img, "PNG", 0, 0, w, h);
+                    pdf.save("Dashboard.pdf");
+
+                } catch (e) {
+                    console.error("PDF Export Error:", e);
+                    alert("PDF Generation Failed:\n" + e.message + "\n\nPossible reasons:\n1. Running locally (file://) blocks image capture.\n2. Internet connection needed for libraries.\n\nWorkaround: Use Ctrl+P (Cmd+P) and select 'Save as PDF'.");
+                } finally {
+                    if (btn) btn.innerText = originalText;
+                }
+            }
+
+            /* ======================================================
+               SCROLL HELPERS
+            ======================================================*/
+            function scrollHeatmap() {
+                document.getElementById("heatmapSection").scrollIntoView({ behavior: "smooth" });
+            }
+            function showPullChordReports() {
+                const reportsSection = document.getElementById("reportsSection");
+                const tableSection = document.getElementById("tableSection");
+                
+                // Toggle visibility
+                if (reportsSection.style.display === "none") {
+                    reportsSection.style.display = "block";
+                    tableSection.style.display = "none";
+                    reportsSection.scrollIntoView({ behavior: "smooth" });
+                } else {
+                    reportsSection.style.display = "none";
+                    tableSection.style.display = "block";
+                    tableSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+            
+            function scrollReports() {
+                showPullChordReports();
+            }
+
+            /* ======================================================
+               KPI DATA (FROM SERVER)
+            ======================================================*/
+            // KPIs are rendered by Thymeleaf
+            
+            /* ======================================================
+               INITIAL RENDER
+            ======================================================*/
+            // Table is already rendered by Thymeleaf
+
+        </script>
+</body>
+
+</html>

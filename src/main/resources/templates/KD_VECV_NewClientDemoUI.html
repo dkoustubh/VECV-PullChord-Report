@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,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">
+    <meta charset="UTF-8">
+    <title>VECV – Industrial Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Charts & Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Light Theme (Default) */
+            --bg: #f8f9fa;
+            --sidebar: #ffffff;
+            --card: #ffffff;
+            --text: #2c3e50;
+            --muted: #64748b;
+            --accent: #2563eb;
+            --border: #e2e8f0;
+            --hover: #f1f5f9;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --bg: #0f172a;
+            --sidebar: #1e293b;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+            --hover: #334155;
+            --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+        }
+
+
+        /* --- GLOBAL LAYOUT RESET --- */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 1. Header: Fixed at Top, Full Width */
+        .top-header {
+            height: 60px;
+            background: #001529;
+            border-bottom: 3px solid #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            flex-shrink: 0;
+            z-index: 50;
+        }
+
+        /* 2. Container: Holds Sidebar + Main */
+        .app-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        /* 3. Sidebar: Fixed Left, Scrollable independently if needed */
+        .sidebar {
+            width: 250px;
+            background: var(--sidebar);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            z-index: 40;
+            overflow-y: auto;
+        }
+
+        /* 4. Main Content: Takes remaining space, Scrollable */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            padding: 0;
+            background: var(--bg);
+        }
+
+        /* Content Wrapper for Padding */
+        .content-scroll {
+            padding: 25px;
+            max-width: 1800px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+            flex: 1;
+        }
+
+        /* Footer: Pushed to bottom of content-scroll */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            background: var(--card);
+            margin-top: 40px;
+        }
+
+        /* Sidebar Inner */
+        .sidebar {
+            width: 260px;
+            background: var(--sidebar);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            z-index: 10;
+        }
+
+        .logo-area {
+            padding: 25px;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-links {
+            flex: 1;
+            padding: 20px 15px;
+            overflow-y: auto;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            text-decoration: none;
+            color: var(--muted);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: var(--hover);
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .nav-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header */
+        /* Header */
+        /* Header */
+        /* Reference Header Style */
+        .top-header {
+            height: 55px;
+            background: #001529;
+            /* Deep Navy */
+            border-bottom: 3px solid #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Live Indicator */
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #ff0000;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Toggle Switch */
+        .theme-switch {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            background: #555;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        .theme-switch.active {
+            background: #555;
+        }
+
+        /* Keep same for now or change */
+        .switch-knob {
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f59e0b;
+            font-size: 10px;
+            transform: translateX(0);
+        }
+
+        [data-theme="light"] .switch-knob {
+            transform: translateX(20px);
+        }
+
+
+        /* Scrollable Area */
+        .content-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+            scroll-behavior: smooth;
+        }
+
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-bottom: 35px;
+        }
+
+        .kpi-card {
+            background: var(--card);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .kpi-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .kpi-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -1px;
+        }
+
+        .kpi-sub {
+            font-size: 12px;
+            margin-top: auto;
+            padding-top: 10px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        /* Charts Section */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        /* Chart Grid - 2 Column */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1100px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Chart Box - Perfect Fit */
+        .chart-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            height: 400px;
+            /* Increased height for better fit */
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .chart-box:hover {
+            box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+            border-color: var(--accent);
+        }
+
+        .chart-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .chart-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .chart-meta {
+            font-size: 11px;
+            color: var(--muted);
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        /* Chart Canvas Container */
+        .chart-container {
+            flex: 1;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Report Table Section */
+        .report-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Filters */
+        .filter-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--muted);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 8px;
+            font-size: 13px;
+            transition: border 0.2s;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: transform 0.1s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-success {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Table */
+        .table-responsive {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            white-space: nowrap;
+            background: var(--card);
+        }
+
+        th,
+        td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg);
+            color: var(--muted);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--hover);
+        }
+
+        th a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Pagination */
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .page-link {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            background: var(--card);
+            transition: all 0.2s;
+        }
+
+        .page-link:hover,
+        .page-link.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 25px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            background: var(--sidebar);
+            margin-top: auto;
+            font-weight: 500;
+        }
+
+        /* Header Updates */
+        .top-header {
+            height: 70px;
+            /* Increased height for larger logo */
+            background: #001529;
+            border-bottom: 3px solid #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+            color: white;
+            flex-shrink: 0;
+            z-index: 50;
+        }
+
+        .header-logo {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+        }
+
+        .header-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-left: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .datetime-box {
+            text-align: right;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .date-text {
+            font-size: 12px;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .time-text {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffcc00;
+        }
+
+        /* Sidebar Updates */
+        .sidebar {
+            width: 250px;
+            background: var(--sidebar);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            z-index: 40;
+            padding-top: 20px;
+        }
+
+        /* Remove logo-area styling if present or override */
+        .logo-area {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<!-- Loading Overlay -->
+<div id="loader-overlay"
+    style="position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; transition: opacity 0.5s;">
+    <div
+        style="width: 300px; height: 6px; background: rgba(0,0,0,0.1); border-radius: 3px; overflow: hidden; position: relative;">
+        <div id="loader-bar" style="width: 0%; height: 100%; background: var(--accent); transition: width 0.3s ease;">
+        </div>
+    </div>
+    <div id="loader-text" style="margin-top: 15px; font-size: 14px; font-weight: 600; color: var(--text);">Loading
+        Dashboard Data... 0%</div>
+</div>
+
+<script>
+    // Simulate Loading Progress
+    document.addEventListener("DOMContentLoaded", function () {
+        let progress = 0;
+        const bar = document.getElementById('loader-bar');
+        const text = document.getElementById('loader-text');
+        const overlay = document.getElementById('loader-overlay');
+
+        // Simulation interval
+        const interval = setInterval(() => {
+            // Slow down as we get higher to simulate "waiting"
+            const increment = progress < 50 ? 5 : (progress < 80 ? 2 : 0.5);
+            progress += increment;
+
+            if (progress > 95) progress = 95; // Wait for actual load event
+
+            bar.style.width = progress + '%';
+            text.innerText = `Loading Dashboard Data... ${Math.round(progress)}%`;
+        }, 100);
+
+        // When everything (images, charts, scripts) is done
+        window.onload = function () {
+            clearInterval(interval);
+            bar.style.width = '100%';
+            text.innerText = 'Loading Complete!';
+
+            // Fade out
+            setTimeout(() => {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 500);
+            }, 500);
+        };
+    });
+</script>
+
+<body>
+    <!-- Top Header (Reference Match) -->
+    <!-- Professional Header -->
+    <div class="top-header">
+        <div class="header-left">
+            <img src="/new_loho_VECV-removebg-preview.png" class="header-logo">
+            <span class="header-title">VECV Dashboard</span>
+        </div>
+
+        <div class="header-right">
+            <!-- Theme Toggle -->
+            <div class="theme-switch" onclick="toggleTheme()" title="Switch Theme">
+                <div class="switch-knob"><i class="fas fa-sun"></i></div>
+            </div>
+
+            <!-- Date & Time -->
+            <div class="datetime-box">
+                <div class="date-text" id="date-display">-- min, 0000</div>
+                <div class="time-text" id="time-display">00:00:00 AM</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="app-container">
+        <div class="sidebar">
+
+            <div class="nav-links">
+                <div class="nav-item active" onclick="scrollToSection('charts')"><i class="fas fa-chart-line"></i>
+                    Analytics
+                </div>
+                <div class="nav-item" onclick="scrollToSection('reports')"><i class="fas fa-table"></i> Downtime Reports
+                </div>
+                <div class="nav-item"><i class="fas fa-cog"></i> Settings</div>
+            </div>
+            <div style="padding: 20px; font-size: 11px; color: var(--muted); text-align: center;">
+                v2.5.0 Stable
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="content-scroll">
+
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-title">Total Records</div>
+                        <div class="kpi-value" th:text="${totalRecords != null ? totalRecords : 0}">0</div>
+                        <div class="kpi-sub">Across all zones</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">Current Table</div>
+                        <div class="kpi-value" style="font-size: 16px;" th:text="${selectedTable}">Z3</div>
+                        <div class="kpi-sub">Active Selection</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">Efficiency</div>
+                        <div class="kpi-value">94.2%</div>
+                        <div class="kpi-sub">Last 24 Hours</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">Loss Hours</div>
+                        <div class="kpi-value" style="color: #ff4d4f">36.1h</div>
+                        <div class="kpi-sub">Critical Alert</div>
+                    </div>
+                </div>
+
+                <!-- ANALYTICS SECTION -->
+                <div id="charts">
+                    <div class="section-title">
+                        <span>Performance Analytics</span>
+                        <span style="font-size:11px; font-weight:normal; color:var(--muted)">Live Data from
+                            Sensors</span>
+                    </div>
+
+                    <!-- Single Grid for 2-column layout -->
+                    <div class="chart-grid">
+                        <!-- 1. Breakdown Trend -->
+                        <div class="chart-box">
+                            <div class="chart-header">1. Breakdown Trend <span class="chart-tag">Target 1.5%</span>
+                            </div>
+                            <canvas id="chart1"></canvas>
+                        </div>
+
+                        <!-- 2. MTBF Analysis -->
+                        <div class="chart-box">
+                            <div class="chart-header">2. MTBF Analysis <span class="chart-tag">>250 Hrs</span></div>
+                            <canvas id="chart2"></canvas>
+                        </div>
+
+                        <!-- 3. MTTR Analysis -->
+                        <div class="chart-box">
+                            <div class="chart-header">3. MTTR Analysis <span class="chart-tag">0.28 Hrs</span></div>
+                            <canvas id="chart3"></canvas>
+                        </div>
+
+                        <!-- 4. SCV Downtime -->
+                        <div class="chart-box">
+                            <div class="chart-header">4. SCV Downtime (Shift-A)</div>
+                            <canvas id="chart4"></canvas>
+                        </div>
+
+                        <!-- 5. Line Breakdowns -->
+                        <div class="chart-box">
+                            <div class="chart-header">5. Line Breakdowns Trend</div>
+                            <canvas id="chart5"></canvas>
+                        </div>
+
+                        <!-- 6. Loss Hours -->
+                        <div class="chart-box">
+                            <div class="chart-header">6. Loss Hours Trend</div>
+                            <canvas id="chart6"></canvas>
+                        </div>
+
+                        <!-- 7. % Uptime -->
+                        <div class="chart-box">
+                            <div class="chart-header">7. % Uptime</div>
+                            <canvas id="chart7"></canvas>
+                        </div>
+
+                        <!-- 8. Equipment -->
+                        <div class="chart-box">
+                            <div class="chart-header">8. Eqpt/Conveyor Downtime</div>
+                            <canvas id="chart8"></canvas>
+                        </div>
+
+                        <!-- 10. Line Downtime -->
+                        <div class="chart-box">
+                            <div class="chart-header">10. Line Downtime Trend</div>
+                            <canvas id="chart10"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REPORT SECTION -->
+                <div id="reports" class="report-section">
+                    <div class="section-title" style="border-left-color: #28a745;">Scada Report Viewer</div>
+
+                    <form method="get" action="/dashboard" class="filter-form"
+                        style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                        <!-- 1. Select Table -->
+                        <div class="form-group">
+                            <label>Select Table</label>
+                            <select name="selectedTable" class="form-control">
+                                <option value="Z3 Pullchord T2" th:selected="${selectedTable == 'Z3 Pullchord T2'}">Z3
+                                    Pullchord T2</option>
+                                <option value="Z5 Pullchord T" th:selected="${selectedTable == 'Z5 Pullchord T'}">Z5
+                                    Pullchord T</option>
+                                <option value="Z7 Pullchord T" th:selected="${selectedTable == 'Z7 Pullchord T'}">Z7
+                                    Pullchord T</option>
+                                <option value="Z9 Pullchord T" th:selected="${selectedTable == 'Z9 Pullchord T'}">Z9
+                                    Pullchord T</option>
+                            </select>
+                        </div>
+
+                        <!-- 2. Station -->
+                        <div class="form-group">
+                            <label>Station</label>
+                            <select name="station" class="form-control">
+                                <option value="">All Stations</option>
+                                <!-- Add options dynamically if needed -->
+                            </select>
+                        </div>
+
+                        <!-- 3. Start Date & Time -->
+                        <div class="form-group">
+                            <label>Start Date & Time</label>
+                            <input type="datetime-local" name="fromDateTime" th:value="${fromDateTime}"
+                                class="form-control">
+                        </div>
+
+                        <!-- 4. End Date & Time -->
+                        <div class="form-group">
+                            <label>End Date & Time</label>
+                            <input type="datetime-local" name="toDateTime" th:value="${toDateTime}"
+                                class="form-control">
+                        </div>
+
+                        <!-- 5. Shift -->
+                        <div class="form-group">
+                            <label>Shift</label>
+                            <select name="shift" class="form-control">
+                                <option value="">All Shifts</option>
+                                <option value="A" th:selected="${shift == 'A'}">A</option>
+                                <option value="B" th:selected="${shift == 'B'}">B</option>
+                                <option value="C" th:selected="${shift == 'C'}">C</option>
+                            </select>
+                        </div>
+
+                        <!-- 6. Rows Per Page -->
+                        <div class="form-group">
+                            <label>Rows Per Page</label>
+                            <select name="size" class="form-control" onchange="this.form.submit()">
+                                <option value="10" th:selected="${(pageSize ?: 10) == 10}">10 Rows</option>
+                                <option value="50" th:selected="${(pageSize ?: 10) == 50}">50 Rows</option>
+                                <option value="100" th:selected="${(pageSize ?: 10) == 100}">100 Rows</option>
+                                <option value="1000" th:selected="${(pageSize ?: 10) == 1000}">Show All</option>
+                            </select>
+                        </div>
+
+                        <!-- Action Buttons & Count -->
+                        <div class="form-group" style="display:flex; flex-direction:column; gap:8px;">
+                            <label>&nbsp;</label> <!-- Spacer for alignment -->
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <input type="hidden" name="page" value="0" />
+                                <button type="submit" class="btn btn-primary" style="flex:1"><i
+                                        class="fas fa-search"></i>
+                                    Filter</button>
+                                <button type="button" class="btn btn-success" style="flex:1"
+                                    onclick="const form = document.querySelector('.filter-form'); 
+                                         const table = form.querySelector('[name=selectedTable]').value;
+                                         const station = form.querySelector('[name=station]').value;
+                                         const shift = form.querySelector('[name=shift]').value;
+                                         const from = form.querySelector('[name=fromDateTime]').value;
+                                         const to = form.querySelector('[name=toDateTime]').value;
+                                         window.location.href=`/download?selectedTable=${encodeURIComponent(table)}&station=${encodeURIComponent(station)}&shift=${encodeURIComponent(shift)}&fromDateTime=${encodeURIComponent(from)}&toDateTime=${encodeURIComponent(to)}&objectName=Report`;">
+                                    <i class="fas fa-file-excel"></i> Excel
+                                </button>
+                            </div>
+                            <div
+                                style="text-align:center; font-size:11px; color:var(--muted); font-weight:600; margin-top:2px;">
+                                <span th:text="${records != null ? records.size() : 0}"
+                                    style="color:var(--text); font-weight:700;"></span>
+                                rows out of
+                                <span th:text="${totalRecords}" style="color:var(--text); font-weight:700;"></span>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='srNo', sortDir=${reverseSortDir})}">
+                                            Sr No <i th:if="${sortField == 'srNo'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'srNo'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='dateTime', sortDir=${reverseSortDir})}">
+                                            Date Time <i th:if="${sortField == 'dateTime'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'dateTime'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='shift', sortDir=${reverseSortDir})}">
+                                            Shift <i th:if="${sortField == 'shift'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'shift'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='line', sortDir=${reverseSortDir})}">
+                                            Line <i th:if="${sortField == 'line'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'line'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='zone', sortDir=${reverseSortDir})}">
+                                            Zone <i th:if="${sortField == 'zone'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'zone'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='station', sortDir=${reverseSortDir})}">
+                                            Station <i th:if="${sortField == 'station'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'station'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='side', sortDir=${reverseSortDir})}">
+                                            Side <i th:if="${sortField == 'side'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'side'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='maintenanceCall', sortDir=${reverseSortDir})}">
+                                            Maint <i th:if="${sortField == 'maintenanceCall'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'maintenanceCall'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='materialCall', sortDir=${reverseSortDir})}">
+                                            Material <i th:if="${sortField == 'materialCall'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'materialCall'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='productionCall', sortDir=${reverseSortDir})}">
+                                            Prod <i th:if="${sortField == 'productionCall'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'productionCall'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='pullCord', sortDir=${reverseSortDir})}">
+                                            Pull Cord <i th:if="${sortField == 'pullCord'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'pullCord'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='qualityCall', sortDir=${reverseSortDir})}">
+                                            Qual <i th:if="${sortField == 'qualityCall'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'qualityCall'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+
+                                    <th><a
+                                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage}, size=${pageSize}, sortField='remark', sortDir=${reverseSortDir})}">
+                                            Remark <i th:if="${sortField == 'remark'}"
+                                                th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></i>
+                                            <i th:unless="${sortField == 'remark'}" class="fas fa-sort"
+                                                style="opacity:0.3"></i>
+                                        </a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="record : ${records}">
+                                    <td th:text="${record.srNo}"></td>
+                                    <td th:text="${record.dateTime}"></td>
+                                    <td th:text="${record.shift}"></td>
+                                    <td th:text="${record.line}"></td>
+                                    <td th:text="${record.zone}"></td>
+                                    <td th:text="${record.station}"></td>
+                                    <td th:text="${record.side}"></td>
+                                    <td th:text="${record.maintenanceCall}"></td>
+                                    <td th:text="${record.materialCall}"></td>
+                                    <td th:text="${record.productionCall}"></td>
+                                    <td th:text="${record.pullCord}"></td>
+                                    <td th:text="${record.qualityCall}"></td>
+                                    <td th:text="${record.remark}"></td>
+                                </tr>
+                                <tr th:if="${records == null or records.empty}">
+                                    <td colspan="13" style="text-align:center; padding:30px; opacity:0.6;">No data found
+                                        for
+                                        selection</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <!-- Pagination -->
+                    <div class="pagination" th:if="${totalPages > 1}">
+                        <!-- Prev -->
+                        <a th:if="${currentPage > 0}"
+                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage - 1}, size=${pageSize}, sortField=${sortField}, sortDir=${sortDir})}"
+                            class="page-link">←</a>
+
+                        <!-- Page Numbers Window -->
+                        <th:block th:each="i : ${#numbers.sequence(
+                        currentPage > 2 ? currentPage - 2 : 0, 
+                        currentPage + 2 < totalPages - 1 ? currentPage + 2 : totalPages - 1
+                    )}">
+                            <a th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${i}, size=${pageSize}, sortField=${sortField}, sortDir=${sortDir})}"
+                                th:class="${currentPage == i ? 'page-link active' : 'page-link'}"
+                                th:text="${i + 1}">1</a>
+                        </th:block>
+
+                        <!-- Next -->
+                        <a th:if="${currentPage < totalPages - 1}"
+                            th:href="@{/dashboard(selectedTable=${selectedTable}, station=${station}, shift=${shift}, fromDateTime=${fromDateTime}, toDateTime=${toDateTime}, page=${currentPage + 1}, size=${pageSize}, sortField=${sortField}, sortDir=${sortDir})}"
+                            class="page-link">→</a>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="footer">
+                    ATS Conveyors India Pvt Ltd &copy; 2025 | VECV
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Chart Scripts -->
+    <script th:inline="javascript">
+        // Real Data from Server
+        const shiftLabels = /*[[${shiftLabels}]]*/['Shift A', 'Shift B', 'Shift C'];
+        const shiftValues = /*[[${shiftValues}]]*/[10, 15, 5];
+
+        const lineLabels = /*[[${lineLabels}]]*/['Line 1', 'Line 2'];
+        const lineValues = /*[[${lineValues}]]*/[20, 30];
+
+        const stationLabels = /*[[${stationLabels}]]*/['St 1', 'St 2', 'St 3'];
+        const stationValues = /*[[${stationValues}]]*/[5, 3, 2];
+
+        // Calculated OEE Metrics
+        const kpiAvailability = /*[[${kpiAvailability}]]*/ 95.0;
+        const kpiBreakdownPct = /*[[${kpiBreakdownPct}]]*/ 5.0;
+        const kpiOEE = /*[[${kpiOEE}]]*/ 85.0;
+        const kpiMTTR = /*[[${kpiMTTR}]]*/ 15.0;
+        const kpiMTBF = /*[[${kpiMTBF}]]*/ 500.0;
+
+
+        // Professional Clock (Date + 12h Time)
+        function updateClock() {
+            const now = new Date();
+
+            // Date: "Mon, 03 Jan 2026"
+            const dateOptions = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
+            document.getElementById('date-display').innerText = now.toLocaleDateString('en-GB', dateOptions);
+
+            // Time: "02:30:45 PM"
+            document.getElementById('time-display').innerText = now.toLocaleTimeString('en-US', { hour12: true });
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // Run immediately
+
+
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Chart Config
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#9aa3b2', font: { size: 10 } } } },
+            scales: {
+                y: { grid: { color: '#ffffff14' }, ticks: { color: '#9aa3b2' } },
+                x: { grid: { color: '#ffffff14' }, ticks: { color: '#9aa3b2' } }
+            }
+        };
+
+        // 4. SCV Downtime (Real: Shift Distribution)
+        new Chart(document.getElementById('chart4'), {
+            type: 'pie',
+            data: {
+                labels: shiftLabels || ['No Data'],
+                datasets: [{
+                    data: shiftValues || [1],
+                    backgroundColor: ['#3b82f6', '#f97316', '#9ca3af', '#facc15', '#10b981']
+                }]
+            }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: '#9aa3b2' } } } }
+        });
+
+        // 5. Line Breakdowns (Real: Line Distribution)
+        new Chart(document.getElementById('chart5'), {
+            type: 'bar',
+            data: {
+                labels: lineLabels || ['No Data'],
+                datasets: [{
+                    label: 'No. of B/Ds',
+                    data: lineValues || [0],
+                    backgroundColor: '#ffec3d',
+                    borderColor: '#ffec3d',
+                    borderWidth: 1
+                }]
+            }, options: commonOptions
+        });
+
+        // 8. Equipment (Real: Top Stations)
+        new Chart(document.getElementById('chart8'), {
+            type: 'doughnut',
+            data: {
+                labels: stationLabels || ['No Data'],
+                datasets: [{
+                    data: stationValues || [1],
+                    backgroundColor: ['#1890ff', '#722ed1', '#52c41a', '#fadb14', '#fa541c']
+                }]
+            }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { color: '#9aa3b2' } } } }
+        });
+
+        // --- Other Charts (Kept as Mock for now as complex metrics require more data/logic) ---
+        // 1. OEE Metric (Was Breakdown Trend)
+        new Chart(document.getElementById('chart1'), {
+            type: 'bar', // Visualizing OEE components
+            data: {
+                labels: ['Availability', 'Performance', 'Quality', 'OEE'],
+                datasets: [
+                    {
+                        label: 'Current Metrics (%)',
+                        data: [kpiAvailability, 96, 99, kpiOEE],
+                        backgroundColor: ['#fa8c16', '#3b82f6', '#52c41a', '#722ed1']
+                    }
+                ]
+            }, options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { max: 100, grid: { color: '#ffffff14' }, ticks: { color: '#9aa3b2' } }, x: { grid: { display: false }, ticks: { color: '#9aa3b2' } } },
+                plugins: { legend: { display: false }, title: { display: true, text: 'Real-Time OEE & Components', color: '#fff' } }
+            }
+        });
+
+        // 2. MTBF
+        new Chart(document.getElementById('chart2'), {
+            type: 'line',
+            data: {
+                labels: ['Avg-22-23', 'Avg-23-24', 'Current'],
+                datasets: [{ label: 'MTBF (Hrs)', data: [252, 476, kpiMTBF], borderColor: '#722ed1', tension: 0.1 }]
+            }, options: commonOptions
+        });
+
+        // 3. MTTR
+        new Chart(document.getElementById('chart3'), {
+            type: 'line',
+            data: {
+                labels: ['Avg-22-23', 'Avg-23-24', 'Current'],
+                datasets: [{ label: 'MTTR (Mins)', data: [15, 38, kpiMTTR], borderColor: '#2f54eb', tension: 0.1 }]
+            }, options: commonOptions
+        });
+
+        // 6. Loss Hours
+        new Chart(document.getElementById('chart6'), {
+            type: 'line',
+            data: {
+                labels: ['Avg-22-23', 'Avg-23-24', 'Avg-24-25', 'Apr-24'],
+                datasets: [{ label: 'Down Time (Hrs)', data: [4.9, 8.58, 7.32, 36.1], borderColor: '#f5222d' }]
+            }, options: commonOptions
+        });
+
+        // 7. % Uptime (Availability)
+        new Chart(document.getElementById('chart7'), {
+            type: 'doughnut', // Changed to Doughnut for clear Availability %
+            data: {
+                labels: ['Uptime', 'Downtime'],
+                datasets: [{
+                    data: [kpiAvailability, (100 - kpiAvailability)],
+                    backgroundColor: ['#52c41a', '#ff4d4f'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: 'Current Availability: ' + kpiAvailability + '%', color: '#fff', font: { size: 14 } },
+                    legend: { position: 'bottom', labels: { color: '#9aa3b2' } }
+                },
+                cutout: '70%'
+            }
+        });
+
+        // 10. Line Downtime
+        new Chart(document.getElementById('chart10'), {
+            type: 'line',
+            data: {
+                labels: ['Avg-22-23', 'Avg-23-24', 'Avg-24-25', 'Apr-24'],
+                datasets: [{ label: 'Downtime', data: [21.25, 25.75, 30, 85], borderColor: '#fa541c' }]
+            }, options: commonOptions
+        });
+    </script>
+
+    <script>function toggleTheme() { const body = document.body; const current = body.getAttribute("data-theme"); body.setAttribute("data-theme", current === "light" ? "dark" : "light"); }</script>
+</body>
+
+</html>
